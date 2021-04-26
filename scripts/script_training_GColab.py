@@ -59,7 +59,7 @@ def data_generator(image_name_captions, image_features, wordtoix, max_caption_le
 				seq = [wordtoix[word] for word in caption.split(' ') if word in wordtoix]
 				for j in range(len(seq)):
 					in_seq, out_seq = seq[:j], seq[j]
-					in_seq = pad_sequences([in_seq], maxlen=max_caption_length)[0]
+					in_seq = pad_sequences([in_seq], maxlen=max_caption_length, padding='post')[0]
 					out_seq = to_categorical([out_seq], num_classes=vocab_size)[0]
 					X1.append(image_feature)
 					X2.append(in_seq)
