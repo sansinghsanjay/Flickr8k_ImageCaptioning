@@ -48,7 +48,7 @@ table = str.maketrans('', '', string.punctuation) # to eliminate all special cha
 for i in range(train_df.shape[0]):
 	caption = train_df.iloc[i]['caption']
 	caption = caption[1 : len(caption) - 1]
-	caption_list = caption.split("', '")
+	caption_list = caption.split(".")
 	number_of_captions = len(caption_list) # number of captions for image i
 	caption = ''
 	for j in range(number_of_captions):
@@ -56,7 +56,8 @@ for i in range(train_df.shape[0]):
 		temp_str = temp_str.lower()
 		temp_str = temp_str.translate(table)
 		temp_str = removeSingleChar_removeNum(temp_str)
-		caption = caption + temp_str + "#"
+		if(len(temp_str) > 5):
+			caption = caption + temp_str + "#"
 	caption = caption[0 : len(caption) - 1] # removing asterisk added at end
 	train_df.iloc[i]['caption'] = caption
 	if((i + 1) % 500 == 0 or (i + 1) == train_df.shape[0]): # update status
