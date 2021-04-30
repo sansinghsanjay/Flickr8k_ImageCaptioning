@@ -48,7 +48,7 @@ table = str.maketrans('', '', string.punctuation) # to eliminate all special cha
 for i in range(train_df.shape[0]):
 	caption = train_df.iloc[i]['caption']
 	caption = caption[1 : len(caption) - 1]
-	caption_list = caption.split(".")
+	caption_list = caption.split("<>")
 	number_of_captions = len(caption_list) # number of captions for image i
 	caption = ''
 	for j in range(number_of_captions):

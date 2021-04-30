@@ -15,14 +15,43 @@ def percentage_progress(completed, total):
 	return perc_progress
 
 # paths
-entire_data_path = "/home/sansingh/Downloads/Flickr8k_ImageCaptioning/archive/captions.txt"
-train_data_path = "/home/sansingh/Downloads/Flickr8k_ImageCaptioning/archive/Flickr_8k.trainImages.txt"
-val_data_path = "/home/sansingh/Downloads/Flickr8k_ImageCaptioning/archive/Flickr_8k.valImages.txt"
-test_data_path = "/home/sansingh/Downloads/Flickr8k_ImageCaptioning/archive/Flickr_8k.testImages.txt"
-target_path = "/home/sansingh/Downloads/Flickr8k_ImageCaptioning/output/intermediate_files/"
+entire_data_path = "/home/sansingh/github_repo/Flickr8k_ImageCaptioning_dataset/captions.txt"
+train_data_path = "/home/sansingh/github_repo/Flickr8k_ImageCaptioning/archive/Flickr_8k.trainImages.txt"
+val_data_path = "/home/sansingh/github_repo/Flickr8k_ImageCaptioning/archive/Flickr_8k.valImages.txt"
+test_data_path = "/home/sansingh/github_repo/Flickr8k_ImageCaptioning/archive/Flickr_8k.testImages.txt"
+target_path = "/home/sansingh/github_repo/Flickr8k_ImageCaptioning/output/intermediate_files/"
 
 # reading entire data
-entire_df = pd.read_csv(entire_data_path)
+f_name = ""
+df_loc = 0
+image_name = list()
+captions = ''
+entire_df = pd.DataFrame(columns=['image', 'caption'])
+f_ptr = open(entire_data_path, 'r')
+lines = f_ptr.readlines()
+for i in range(len(lines)):
+	if(i == 0): # header line, thus ignore it
+		continue
+	else:
+		line = lines[i].strip()
+		temp_str = line.split(".")[0] + ".jpg"
+		cap = ' '.join(line.split(".")[1:])
+		cap = cap[3:]
+		if(f_name != temp_str and i == 1):
+			f_name = temp_str
+			captions = cap
+		if(f_name == temp_str and i > 1):
+			captions = captions + '<>' + cap
+		if(f_name != temp_str and i > 1):
+			entire_df.loc[df_loc] = [f_name, captions]
+			df_loc += 1
+			f_name = temp_str
+			captions = cap
+	if((i + 1) % 500 == 0 or (i + 1) == len(lines)):
+		perc_progress = percentage_progress((i + 1), len(lines))
+		print("Completed grouping image name and captions: ", perc_progress, " %", end='\r')
+print()
+entire_df.loc[df_loc] = [f_name, captions]
 
 # reading train data
 train_filenames = list()
@@ -49,9 +78,9 @@ for line in lines:
 	test_filenames.append(line.strip())
 
 # grouping captions in entire data based on image name
-entire_df = entire_df.groupby(['image'])
-entire_df = entire_df['caption'].apply(list)
-entire_df = entire_df.reset_index()
+#entire_df = entire_df.groupby(['image'])
+#entire_df = entire_df['caption'].apply(list)
+#entire_df = entire_df.reset_index()
 
 # extracting image-caption for training data
 train_df = pd.DataFrame()
