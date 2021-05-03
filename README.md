@@ -2,6 +2,12 @@
 ## Introduction  
 It is a Python project for generating captions for images.  
   
+Automated Image Captioning can be defined as generating a textual description of a given image.  
+  
+This problem was well researched by Andrej Karpathy in his PhD at Stanford University.  
+  
+Deep Learning has achieved state-of-art result in Image Captioning. In this project, classic solution (naive approach, i.e. simple encoder-decoder based approach) for Image Captioning is implemented. An advanced solution for Image Captioning is Attention Mechanism which is also quite useful for Neural Machine Translation (i.e., translating text from one natural language to another natural language). To be more specific, Attention Mechanism for Image Captioning is called as Visual Attention Mechanism.  
+  
 Following is an example of image captioning:  
 ![alt text](https://github.com/sansinghsanjay/Flickr8k_ImageCaptioning/blob/main/archive/Images/12830823_87d2654e31.jpg)  
   
@@ -21,7 +27,7 @@ Following are some of the applications of Image Captioning:
 ## Dataset  
 Flickr8k dataset is used here.  
 Following is the link of this dataset: [Flickr8k Image Captioning Dataset](https://www.kaggle.com/adityajn105/flickr8k)  
-The above dataset has 8,091 images with a [captions.txt](https://github.com/sansinghsanjay/Flickr8k_ImageCaptioning/blob/main/archive/captions.txt) file mentioning five captions for each image.  
+The above dataset has 8,091 images with a [captions.txt](https://github.com/sansinghsanjay/Flickr8k_ImageCaptioning/blob/main/archive/captions.txt) file mentioning five captions for each image. All captions are written by different different people for every image. The size of this dataset is 1.04 GB.  
 Thus, 8,091 images x 5 captions = 40,455 image-captions  or lines in [captions.txt](https://github.com/sansinghsanjay/Flickr8k_ImageCaptioning/blob/main/archive/captions.txt).  
 Training file [Flickr_8k.trainImages.txt](https://github.com/sansinghsanjay/Flickr8k_ImageCaptioning/blob/main/archive/Flickr_8k.trainImages.txt) and Testing file [Flickr_8k.testImages.txt](https://github.com/sansinghsanjay/Flickr8k_ImageCaptioning/blob/main/archive/Flickr_8k.testImages.txt) are downloaded from the Internet (source missed). These training and testing files have name of images to be used in training and testing of model.  
   
@@ -31,11 +37,13 @@ Following are some sample images:
 ![alt text](https://github.com/sansinghsanjay/Flickr8k_ImageCaptioning/blob/main/archive/images_for_readme/4.png) ![alt text](https://github.com/sansinghsanjay/Flickr8k_ImageCaptioning/blob/main/archive/images_for_readme/5.png)  
   
 ## Technology  
-This project is at the intersection of following two technologies:  
-1. Computer Vision (CV)  
-2. Natual Language Generation (NLG)  
+In this project, classic solution (naive approach, i.e. simple encoder-decoder based approach) for Image Captioning is implemented. An advanced solution for Image Captioning is Attention Mechanism which is also quite useful for Neural Machine Translation (i.e., translating text from one natural language to another natural language). To be more specific, Attention Mechanism for Image Captioning is called as Visual Attention Mechanism.  
   
-What is Natural Language Generation (NLG)?  
+This project is at the intersection of following two technologies:  
+1. Computer Vision (CV): To understand the content of a given image.  
+2. Natual Language Generation (NLG): NLG transforms data into plain English text. It is a branch of Natural Language Processing (NLP).  
+
+### How NLG is different from NLP  
   
   
 ## Programming Language and Packages Used
