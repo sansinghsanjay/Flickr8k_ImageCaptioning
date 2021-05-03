@@ -13,6 +13,10 @@ Following are the possible captions for the above image:
 5. There are several people and children looking into water with a blue tiled floor and goldfish  
   
 Following are some of the applications of Image Captioning:  
+1. Self Driving Cars  
+2. Aid to the blind people: It can guide blind people by generating text for the scene in front and speaking it by using TTS (Text to Speech) systems.  
+3. CCTV Cameras are everywhere, but along with viewing the world, it can generate relevant captions, then we can raise alarms as any malicious activity take place.  
+4. Image Captioning can make Google Image Search better.
     
 ## Dataset  
 Flickr8k dataset is used here.  
