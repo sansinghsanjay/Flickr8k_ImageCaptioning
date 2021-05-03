@@ -12,6 +12,8 @@ Following are the possible captions for the above image:
 4. Some children watching fish in a pool  
 5. There are several people and children looking into water with a blue tiled floor and goldfish  
   
+Following are some of the applications of Image Captioning:  
+  
 ## Dataset  
 Flickr8k dataset is used here.  
 Following is the link of this dataset: [Flickr8k Image Captioning Dataset](https://www.kaggle.com/adityajn105/flickr8k)  
