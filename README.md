@@ -74,27 +74,25 @@ Evaluating NLG systems is a much more complicated task. There are following four
 4. Consensus based image Descriptive Evaluation (CIDEr)  
 Since above metrics differ mostly in terms of precision and recall (i.e., sensitivity), thus we will first see how to calculate precision and recall (i.e., sensitivity) in NLG.  
 In general,  
-  Precision is the ratio of number of correctly predicted positive instances out of total number of predicted positive instances.  
+&nbsp;&nbsp;&nbsp;&nbsp;Precision is the ratio of number of correctly predicted positive instances out of total number of predicted positive instances.  
   Eq of Precision  
-  Recall or Sensitivity is the number of correctly predicted positive instances out of total number of actual positive instances.  
+&nbsp;&nbsp;&nbsp;&nbsp;Recall or Sensitivity is the number of correctly predicted positive instances out of total number of actual positive instances.  
   Eq of Recall (or Sensitivity)  
 In NLG:  
-  We call predicted (or generated) text as candidate text and actual text as reference text. Consider the following case:  
-  Reference: "I work on machine learning"  
-  Candidate A: "I work"  
-  Candidate B: "He works on machine learning"  
-  Precision in NLG: Eq  
-  Recall (or sensitivity) in NLG: Eq  
-  Precision of Candidate A: Eq  
-  Recall of Candidate A: Eq  
-  Precision of Candidate B: Eq  
-  Recall of Candidate B: Eq  
-  Above calculations are done by using unigram. One can also use bigram, trigram and so on (i.e., n-gram) and result will different.  
-  In modified n-gram precision scheme, we match candidate's n-gram only as many times as they are present in any of reference's text.  
-  Finally, to include all the n-gram precision scores in our final precision, we take their geometric mean. This is because it has been found that precision decreases exponentially with n; and as such we would require logarithmic averaging to represent all values fairly.  
-  Precision Eq  
-  
-  
+&nbsp;&nbsp;&nbsp;&nbsp;We call predicted (or generated) text as candidate text and actual text as reference text. Consider the following case:  
+&nbsp;&nbsp;&nbsp;&nbsp;Reference: "I work on machine learning"  
+&nbsp;&nbsp;&nbsp;&nbsp;Candidate A: "I work"  
+&nbsp;&nbsp;&nbsp;&nbsp;Candidate B: "He works on machine learning"  
+&nbsp;&nbsp;&nbsp;&nbsp;Precision in NLG: Eq  
+&nbsp;&nbsp;&nbsp;&nbsp;Recall (or sensitivity) in NLG: Eq  
+&nbsp;&nbsp;&nbsp;&nbsp;Precision of Candidate A: Eq  
+&nbsp;&nbsp;&nbsp;&nbsp;Recall of Candidate A: Eq  
+&nbsp;&nbsp;&nbsp;&nbsp;Precision of Candidate B: Eq  
+&nbsp;&nbsp;&nbsp;&nbsp;Recall of Candidate B: Eq  
+&nbsp;&nbsp;&nbsp;&nbsp;Above calculations are done by using unigram. One can also use bigram, trigram and so on (i.e., n-gram) and result will different.  
+&nbsp;&nbsp;&nbsp;&nbsp;In modified n-gram precision scheme, we match candidate's n-gram only as many times as they are present in any of reference's text.  
+&nbsp;&nbsp;&nbsp;&nbsp;Finally, to include all the n-gram precision scores in our final precision, we take their geometric mean. This is because it has been found that precision decreases exponentially with n; and as such we would require logarithmic averaging to represent all values fairly.  
+&nbsp;&nbsp;&nbsp;&nbsp;Precision Eq  
   
 ## Results Obtained  
   
