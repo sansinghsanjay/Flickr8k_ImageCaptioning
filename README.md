@@ -66,6 +66,36 @@ Following are the details of some of the crucial packages:
 Script [check_training_val_test.py](https://github.com/sansinghsanjay/Flickr8k_ImageCaptioning/blob/main/scripts/check_training_val_test.py) verified that the name of images given in training and testing .txt file are in captions.txt or not. Alogn with this, this script has created a file [Flickr_8k.valImages.txt](https://github.com/sansinghsanjay/Flickr8k_ImageCaptioning/blob/main/archive/Flickr_8k.valImages.txt) which has names of images that are not in training and testing .txt file. These images can be used for validation, as the name of file suggests. At last, this script has generated and saved following plot which summarising the number of images in the entire dataset, training , validation and testing dataset.  
 ![alt text](https://github.com/sansinghsanjay/Flickr8k_ImageCaptioning/blob/main/archive/no_of_imgs_in_original_train_val_test.png)  
   
+## Evaluation Metric Used Here: BLEU Score  
+Evaluating NLG systems is a much more complicated task. There are following four evaluation metrics for evaluating a NLG system:  
+1. Bilingual Evaluation Understudy (BLEU Score)  
+2. Recall Oriented Understudy for Gisting Evaluation (ROUGE)  
+3. Metric for Evaluation for Translation with Explicit Ordering (METEOR)  
+4. Consensus based image Descriptive Evaluation (CIDEr)  
+Since above metrics differ mostly in terms of precision and recall (i.e., sensitivity), thus we will first see how to calculate precision and recall (i.e., sensitivity) in NLG.  
+In general,  
+  Precision is the ratio of number of correctly predicted positive instances out of total number of predicted positive instances.  
+  Eq of Precision  
+  Recall or Sensitivity is the number of correctly predicted positive instances out of total number of actual positive instances.  
+  Eq of Recall (or Sensitivity)  
+In NLG:  
+  We call predicted (or generated) text as candidate text and actual text as reference text. Consider the following case:  
+  Reference: "I work on machine learning"  
+  Candidate A: "I work"  
+  Candidate B: "He works on machine learning"  
+  Precision in NLG: Eq  
+  Recall (or sensitivity) in NLG: Eq  
+  Precision of Candidate A: Eq  
+  Recall of Candidate A: Eq  
+  Precision of Candidate B: Eq  
+  Recall of Candidate B: Eq  
+  Above calculations are done by using unigram. One can also use bigram, trigram and so on (i.e., n-gram) and result will different.  
+  In modified n-gram precision scheme, we match candidate's n-gram only as many times as they are present in any of reference's text.  
+  Finally, to include all the n-gram precision scores in our final precision, we take their geometric mean. This is because it has been found that precision decreases exponentially with n; and as such we would require logarithmic averaging to represent all values fairly.  
+  Precision Eq  
+  
+  
+  
 ## Results Obtained  
   
 ## References  
