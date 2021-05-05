@@ -75,7 +75,7 @@ Evaluating NLG systems is a much more complicated task. There are following four
 Since above metrics differ mostly in terms of precision and recall (i.e., sensitivity), thus we will first see how to calculate precision and recall (i.e., sensitivity) in NLG.  
 In general,  
 &nbsp;&nbsp;&nbsp;&nbsp;Precision is the ratio of number of correctly predicted positive instances out of total number of predicted positive instances.  
-  Eq of Precision  
+  ![alt txt](https://github.com/sansinghsanjay/Flickr8k_ImageCaptioning/blob/main/maths_eqn/precision_eq.gif)  
 &nbsp;&nbsp;&nbsp;&nbsp;Recall or Sensitivity is the number of correctly predicted positive instances out of total number of actual positive instances.  
   Eq of Recall (or Sensitivity)  
 In NLG:  
