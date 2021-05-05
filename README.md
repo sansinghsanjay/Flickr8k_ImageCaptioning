@@ -41,10 +41,19 @@ In this project, classic solution (naive approach, i.e. simple encoder-decoder b
   
 This project is at the intersection of following two technologies:  
 1. Computer Vision (CV): To understand the content of a given image.  
-2. Natual Language Generation (NLG): NLG transforms data into plain English text. It is a branch of Natural Language Processing (NLP).  
-
-### How NLG is different from NLP  
+2. Natual Language Generation (NLG): NLG transforms data into plain English text. It is a branch of Natural Language Processing (NLP). 
   
+## Applications of Natural Language Generation (NLG)  
+Following are some of the applications of NLG:  
+1. Freeform Text Generation: User provides an input, like a phrase, sentence or paragraph and the NLG model generates continuation of this input as output. For instances, Google Smart Compose predicts a phrase following a word input in Gmail.  
+2. Question Answering: This is a system that can answer questions posed by humans. These systems can be open ended or closed ended (domain specific).  
+3. Summarization: Summarization reduces the amount of information while capturing the most important details in a narrative. This is of two types:  
+  i. Extractive Summarization: It takes the most important phrases or sentences and stitches them together to form a summarizated narrative.  
+  ii. Abstractive Summarization: This is equivalent of a human writing a summary in his / her own words. For instance, headline generation, abstract for journals / whitepaper / etc.  
+4. Image Captioning  
+  
+### How NLG is different from NLP  
+NLP is focussed on deriving analytic insights from textual data. Whereas, NLG is used to synthesize textual content by combining analytic output with contextualized narratives. In short, NLP reads while NLG writes.  
   
 ## Programming Language and Packages Used
 The entire project is implemented in Python - 3.6.9.  
