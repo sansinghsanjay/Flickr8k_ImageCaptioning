@@ -20,10 +20,11 @@ original_filenames = set()
 f_ptr = open(original_data_path, "r")
 lines = f_ptr.readlines()
 f_ptr.close()
-for line in lines:
-	line = line.split(",")[0]
-	line = line.strip()
-	original_filenames.add(line)
+for i in range(len(lines)):
+	if(i > 0): # ignore header line
+		line = lines[i].split(",")[0]
+		line = line.strip()
+		original_filenames.add(line)
 original_filenames = list(original_filenames)
 
 # status of original data
