@@ -22,11 +22,17 @@ for line in lines:
 	tokens = line.split(' ') 
 	loss_values.append(float(tokens[len(tokens) - 1]))
 
+# epochs
+epochs = len(loss_values)
+epoch_values = list(range(1, epochs + 1))
+
 # making plot
+plt.scatter(epoch_values, loss_values)
+plt.plot(epoch_values, loss_values)
 plt.title("Training Loss")
 plt.xlabel("Epochs")
+plt.xticks(epoch_values)
 plt.ylabel("Loss Value")
 plt.grid()
-plt.plot(loss_values)
 plt.savefig(target_path + "train_loss_plot.png")
 
